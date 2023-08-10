@@ -5,6 +5,7 @@ require 'config/database.php';
 if (isset($_POST['submit'])) {
     //get form submission data
 
+
     $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $description = filter_var($_POST['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
@@ -18,7 +19,7 @@ if (isset($_POST['submit'])) {
     //redirect back to the category page
 
     if(isset($_SESSION['add-category'])) {
-        $_SESSION['add-category'] = $_POST;
+        $_SESSION['add-category-data'] = $_POST;
         header("Location: " . ROOT_URL . "Admin/add-category.php");
         die();
     } else {
@@ -28,7 +29,7 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($connection, $query);
         if(mysqli_errno($connection)){
             $_SESSION['add-category'] = "Unable to add category";
-            header("Location: " . ROOT_URL . "Admin/add_category.php");
+            header("Location: " . ROOT_URL . "Admin/add-category.php");
             die();
             
         } else {

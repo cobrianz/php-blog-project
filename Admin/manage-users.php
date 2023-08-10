@@ -11,6 +11,7 @@ $users = mysqli_query($connection, $query);
 
 ?>
 
+
 <section class="dashboard">
 <?php if(isset($_SESSION['add-user-success'])) : //show if user is added successful ?>
 
@@ -42,7 +43,7 @@ unset($_SESSION['add-user-success']);
 </div>
 <?php elseif(isset($_SESSION['delete-user-success'])) : //show if  user is not updated successful ?>
 
-<div class="alert__message success container">
+<div class="alert__message succ3223ess container">
 <p><?= $_SESSION['delete-user-success'];
    unset($_SESSION['delete-user-success']); 
    ?></p>
@@ -80,6 +81,7 @@ unset($_SESSION['add-user-success']);
         </aside>
         <main>
             <h2>Manage users</h2>
+            <?php if(mysqli_num_rows($users) > 0) : ?>
             <table>
                 <thead>
                     <tr>
@@ -102,6 +104,11 @@ unset($_SESSION['add-user-success']);
                     <?php endwhile ?>
                 </tbody>
             </table>
+            <?php  else : ?>
+                <div class="alert__message error">
+                    <?= "No users found" ?>
+                    <?php endif; ?>
+                </div>
         </main>
     </div>
 </section>

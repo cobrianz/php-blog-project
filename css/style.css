@@ -130,7 +130,7 @@ nav button img{
 
 .avatar{
     width: 2.5rem;
-    aspect-ratio: 1/1;
+    height: 2.5rem;
     border-radius: 50%;
     overflow: hidden;
     border: 0.3rem solid var(--color-bg);
@@ -582,7 +582,7 @@ input, textarea, select{
 
 .dashboard main table td{
     padding: 0.8rem;
-    border-bottom: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid rgb(48, 46, 102);
     
 }
 
@@ -717,10 +717,6 @@ input, textarea, select{
         padding: 0;
         background: transparent;
     }
-
-    .dashboard aside{
-/*         background: var(--color-primary);
- */  }
 
     .dashboard aside h5{
     display: none;
