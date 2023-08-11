@@ -37,6 +37,20 @@ $categories = mysqli_query($connection, $query);
         unset($_SESSION['edit-category']);
         ?></p>
     </div>
+        <?php elseif(isset($_SESSION['delete-category-success'])) : //show if categpry was successful deleted ?>
+
+        <div class="alert__message success container">
+        <p><?= $_SESSION['delete-category-success'];
+        unset($_SESSION['delete-category-success']);
+        ?></p>
+    </div>
+        <?php elseif(isset($_SESSION['delete-category'])) : //show if categpry was not successful deleted ?>
+
+        <div class="alert__message success container">
+        <p><?= $_SESSION['delete-category'];
+        unset($_SESSION['delete-category']);
+        ?></p>
+    </div>
     <?php endif; ?>
     <div class="container dashboard__container">
         <button id="hide__sidebar-btn" class="sidebar__toggle"><img src="../images/chevron-right.png" style="width: 2rem; filter: invert()"></button>
