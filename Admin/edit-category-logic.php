@@ -15,9 +15,9 @@ if(!$title || !$description){
     $result = mysqli_query($connection, $query);
 
     if(mysqli_errno($connection)){
-        $_SESSION['edit-category'] = "Unable to update the category $title";
+        $_SESSION['edit-category'] = "Unable to update the $title category ";
     } else {
-        $_SESSION['edit-category-success'] = "Category $title successfully updated";
+        $_SESSION['edit-category-success'] = "$title Category successfully updated";
 
      }
   }
